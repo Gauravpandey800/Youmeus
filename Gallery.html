@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="/assets/Images/Logo.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="assets/CSS/blog.css">
+    <link rel="stylesheet" href="assets/CSS/Navbar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>Achar</title>
+
+
+    <style>
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: black;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 80px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* Default: 4 images per row */
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .gallery-item {
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 6px solid #4a5568;
+            transition: transform 0.5s, box-shadow 0.5s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.5s;
+        }
+
+        .gallery-item:hover .overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* 🔹 Up-and-down wave effect */
+        .gallery-item:nth-child(4n+1),
+        /* 1st image in each row */
+        .gallery-item:nth-child(4n+3) {
+            /* 3rd image in each row */
+            transform: translateY(-15px);
+        }
+
+        .gallery-item:nth-child(4n+2),
+        /* 2nd image in each row */
+        .gallery-item:nth-child(4n+4) {
+            /* 4th image in each row */
+            transform: translateY(15px);
+        }
+
+        /* 📱 Responsive: 2 columns for tablets */
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 📱 Responsive: 1 column for small screens with more spacing */
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 30px;
+                /* Increased gap */
+                padding: 20px;
+            }
+
+            .gallery-item {
+                margin: 10px 0;
+                /* Adds vertical spacing */
+                padding: 10px;
+                /* Adds padding for a better look */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================= Navbar ====================================== -->
+
+
+    <header class="header-Nav">
+        <img src="assets/Images/Logo.jpg" alt="Logo">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="nav-bg"></div>
+
+    <!-- ============================================= Gallery ====================================== -->
+
+    <h2 style="font-size: 2.5rem; font-weight: bold;">Meet Our Team</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="assets/Images/group1.jpg" alt="Team Member 1">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/Images/group2.jpg" alt="Team Member 2">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/Images/group3.jpg" alt="Team Member 3">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/Images/group4.jpg" alt="Team Member 4">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/Images/making1.jpg" alt="Team Member 5">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/Images/making2.jpg" alt="Team Member 6">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/Images/F&D1.jpg" alt="Team Member 7">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/Images/F&D.jpg" alt="Team Member 8">
+            <div class="overlay"></div>
+        </div>
+    </div>
+
+
+
+    <!-- ============================================= Footer ============================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Privacy Policy</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support Us</h3>
+                <p class="support">Help us grow by sharing our products and leaving a review.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Email Updates</h3>
+                <p>Subscribe to get the latest updates.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Follow Us Section (Horizontal) -->
+        <div class="follow-us">
+            <h3>Follow Us:</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/18hFoXMq5p/"><i class="fab fa-facebook"></i></a>
+                <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                <a href="https://www.instagram.com/youmeusfoods?igsh=N2F4aW1qOTZ1aHg1"><i
+                        class="fab fa-instagram"></i></a>
+                <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 YourWebsite. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            document.getElementById('nav-menu').classList.toggle('active');
+            document.getElementById('nav-bg').classList.toggle('active');
+        });
+    </script>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
